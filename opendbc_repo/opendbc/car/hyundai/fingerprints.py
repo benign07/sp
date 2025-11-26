@@ -1271,6 +1271,16 @@ FW_VERSIONS = {
       b'\xf1\x00T01G00BL  T01I00A1  DOS2T16X4XI00NS0\x99L\xeeq',
     ],
   },
+  CAR.HYUNDAI_PALISADE_LX3_HEV: {
+    (Ecu.fwdRadar, 0x7d0, None): [
+      b'\xf1\x00LX3__                1.00 1.01 99110P9200          ',
+      b'\xf1\x8b %\x07\x02'
+    ],
+    # ī ޶            Ȯ   Ͽ   ν         ϹǷ   ּ  ó   ϰų       մϴ .
+    # (Ecu.fwdCamera, 0x7c4, None): [
+    #   b'\xf1\x8b %\x05#',
+    # ],
+  },
 }
 
 FW_VERSIONS = merge_fw_versions(FW_VERSIONS, FW_VERSIONS_EXT)
