@@ -63,8 +63,11 @@ def register(show_spinner=False) -> str | None:
         cloudlog.exception("Error getting imei, trying again...")
         time.sleep(1)
 
-      if time.monotonic() - start_time > 60 and show_spinner:
-        spinner.update(f"registering device - serial: {serial}, IMEI: ({imei1}, {imei2})")
+      if time.monotonic() - start_time > 30:
+        cloudlog.warning("IMEI timeout, proceeding without IMEI")
+        imei1 = imei1 or ""
+        imei2 = imei2 or ""
+        break
 
     backoff = 0
     start_time = time.monotonic()
